@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Календари</title>
+    <style>
+        .tab {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tab">
+    <iframe src="https://calendar.google.com/calendar/embed?src=d55039f0ed2b1511027f80b03b6e916618be31d4d4aebfe14a1e970025cf73e4%40group.calendar.google.com&ctz=Europe%2FMoscow" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div class="tab">
+    <iframe src="https://calendar.google.com/calendar/embed?src=d55039f0ed2b1511027f80b03b6e916618be31d4d4aebfe14a1e970025cf73e4%40group.calendar.google.com&ctz=Europe%2FMoscow&mode=WEEK" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div class="tab">
+    <iframe src="https://calendar.google.com/calendar/embed?src=d55039f0ed2b1511027f80b03b6e916618be31d4d4aebfe14a1e970025cf73e4%40group.calendar.google.com&ctz=Europe%2FMoscow&mode=AGENDA" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tabs = document.querySelectorAll('.tab');
+        tabs[0].style.display = 'block';
+
+        document.querySelectorAll('ul.tabs li').forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(tab => tab.style.display = 'none');
+                tabs[index].style.display = 'block';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
