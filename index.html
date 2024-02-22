@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Календари</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система бронирования кортов</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .tab {
-            display: none;
-        }
+    .tab-content {
+        margin-top: 20px;
+    }
+
     </style>
 </head>
 <body>
 
-<div class="tab">
-    <iframe src="https://calendar.google.com/calendar/embed?src=d55039f0ed2b1511027f80b03b6e916618be31d4d4aebfe14a1e970025cf73e4%40group.calendar.google.com&ctz=Europe%2FMoscow" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div class="container">
+    <h1 class="text-center">Система бронирования кортов</h1>
+    <p class="text-center">Здесь вы можете посмотреть свободное время корт в Курортном городке и на Металлурге</p>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="metallurg-tab" data-toggle="tab" href="#metallurg" role="tab"
+               aria-controls="metallurg" aria-selected="true">Металлург</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="court2-tab" data-toggle="tab" href="#court2" role="tab" aria-controls="court2"
+               aria-selected="false">Курортный грунт 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="grass-tab" data-toggle="tab" href="#grass" role="tab" aria-controls="grass"
+               aria-selected="false">Курортный трава</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="metallurg" role="tabpanel" aria-labelledby="metallurg-tab">
+            <p>Содержимое вкладки "Металлург" здесь</p>
+        </div>
+        <div class="tab-pane fade" id="court2" role="tabpanel" aria-labelledby="court2-tab">
+            <p>Содержимое вкладки "Курортный грунт 2" здесь</p>
+        </div>
+        <div class="tab-pane fade" id="grass" role="tabpanel" aria-labelledby="grass-tab">
+            <p>Содержимое вкладки "Курортный трава" здесь</p>
+        </div>
+    </div>
 </div>
 
-<div class="tab">
-    <iframe src="https://calendar.google.com/calendar/embed?src=d55039f0ed2b1511027f80b03b6e916618be31d4d4aebfe14a1e970025cf73e4%40group.calendar.google.com&ctz=Europe%2FMoscow&mode=WEEK" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<div class="tab">
-    <iframe src="https://calendar.google.com/calendar/embed?src=d55039f0ed2b1511027f80b03b6e916618be31d4d4aebfe14a1e970025cf73e4%40group.calendar.google.com&ctz=Europe%2FMoscow&mode=AGENDA" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const tabs = document.querySelectorAll('.tab');
-        tabs[0].style.display = 'block';
-
-        document.querySelectorAll('ul.tabs li').forEach((tab, index) => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(tab => tab.style.display = 'none');
-                tabs[index].style.display = 'block';
-            });
-        });
-    });
-</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
